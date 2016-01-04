@@ -1,0 +1,25 @@
+# Test data
+
+User(admin):
+    userid:         admin
+    password:       admin
+    nickname:       Administrator
+    identity:        1
+
+User(boxizen):
+    userid:         201031000627
+    password:       19911024
+    nickname:       boxizen
+    identity:        0
+
+User(towerZhan):
+    userid:         201031000628
+    password:       19910504
+    nickname:       TowerZhan
+    identity:        0
+
+User(Jelly):
+    userid:         201031000629
+    password:       19910504
+    nickname:       JellyTim
+    identity:        0

@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'Web Slider | register' /}
+<div id="loginFrame">
+    <form action="@{Application.addUser()}" method="POST">
+        <table id="loginTable">
+            <tr>
+                <td colspan="2" class="loginTile">Register</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="inputLineName">用户名</div>
+                    <input type="text" name="userid" class="inputLine reg"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="inputLineName">昵称</div>
+                    <input type="text" name="name" class="inputLine reg"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="inputLineName">密码</div>
+                    <input type="password" name="password" class="inputLine reg"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- <a href="#" class="linkWord">忘记密码?</a>
+                    或
+                    <a href="#" class="linkWord">还没注册?</a> -->
+                    #{ifErrors username}
+                        #{errors}
+                        <span class="errMsg">&nbsp;&nbsp;&nbsp;${error}</span>
+                        #{/errors}
+                    #{/ifErrors}
+                </td>
+                <td class="submitTd">
+                    <input type="submit" value="注册" />&nbsp;&nbsp;
+                    <a href="@{Application.login()}" class="regBtn">返回</a> 
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,230 @@
+/* 消除PC端样式 */
+#menuBar{
+	display:none;
+}
+#fileMsg{
+	display:none;
+}
+#prevBtn{
+	display:none;
+}
+#nextBtn{
+	display:none;
+}
+.tooltips{
+	display:none;
+}
+#pptFile{
+    display:none;
+}
+
+/* 移动端界面 */
+html{
+	-webkit-text-size-adjust： none;
+}
+body{
+	background:#F8F8F8;
+}
+
+/* 登陆页面 */
+#loginTable{
+	font-size:20px;
+	-webkit-transform:scale(1.5,1.5);
+	-moz-transform:scale(1.5,1.5);
+}
+.loginTile{
+	font-size:45px;
+}
+
+/* 欢迎界面  */
+.welSite{
+    position:fixed;
+    background:#FFF;
+    text-align: center;
+    width:100%;
+    height:100%;
+    top:0px;
+    border-radius: 10px ;
+    border:1px solid rgba(0,0,0,.3);
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+/* 竖屏状态*/
+@media all and (orientation : portrait){ 
+/* 标题菜单  */
+	#phoneMenu{
+		position:fixed;
+		background:#000;
+		height:50px;
+		width:100%;
+		opacity:0.7;
+		top:0;
+		color:#FFF;
+		font-family:Arial;
+		font-size:30px;
+		padding:20px 20px 0px 20px;
+		text-align: center;
+		line-height:30px;
+	}
+	#phoneMenu.show{
+		height:100px;
+		font-size:50px;
+		font-weight: bold;
+		padding:20px 0px 20px 20px;
+		text-align: center;
+		line-height: 120px;
+	}
+	/* 底部信息 */
+	.bottomPane{
+		position:fixed;
+		background:#000;
+		height:50px;
+		width:100%;
+		opacity:0.7;
+		bottom:0;
+		color:#FFF;
+		font-family:Arial;
+		font-size:30px;
+		padding:20px 20px 0px 20px;
+		text-align: center;
+		line-height:30px;
+	}
+	/* 控制面板  */
+	.controlMenu{
+		position:fixed;
+		width:100%;
+		height:360px;
+		bottom:0px;
+	}
+	.controlMenu.highlight{
+		/* background:#f0f0f0; */
+	}
+	/* 控制按钮  */
+	.phoneBtn{
+		display: block;
+		text-decoration: none;
+		width:160px;
+		height:160px;
+		border-radius: 80px;
+		opacity: 0.6;
+		background:black;
+		position: absolute;
+		font-family: Arial;
+		color:#FFF;
+		text-align: center;
+		font-size:40px;
+		line-height: 160px;
+	}
+	#phonePageU{
+		left:10%;
+		bottom:8%;
+		
+	}
+	#phonePageD{
+		right:10%;
+		bottom:8%;
+	}
+	#phoneFullS{
+		width:200px;
+		height:200px;
+		border-radius: 100px;
+		left:0;
+		right:0;
+		bottom:7%;
+		margin:auto;
+		font-size:45px;
+		line-height: 200px;
+	}
+	/* 播放区域  */
+	#screenShow{
+		position:fixed;
+	}
+	/* 幻灯片列表  */
+	.slideList{
+		border-radius: 10px;
+		width:90%;
+		height:50%;
+	}
+	.slideListTitle{
+		font-size:50px;
+	}
+	.slideListContent{
+		width:100%;
+		height:70%;
+	}
+	.slideList table{
+		padding:5px
+	}
+	.slideList table a{
+		font-size:30px;
+		padding:30px 0px 30px 0px;
+	}
+	.slideListBottom .slideCloseBtn{
+		display: block;
+		background:gray;
+		border:1px solid gray;
+		font-size:40px;
+		font-weight: bold;
+		height:50px;
+		width:100px;
+		line-height: 50px;
+		padding:10px;
+		color:#FFF;
+	}
+	.slideCloseBtn.modalCloseBtn{
+		display:none;
+	}
+} 
+/* 横屏状态*/
+@media all and (orientation : landscape){
+	/* 标题菜单 */
+	#phoneMenu{
+		display:none;
+	}
+	#phoneMenu.show{
+		display:none;
+	}
+	/* 底部信息*/
+	.bottomPane{
+		display:none;
+	}
+	/*控制面板*/
+	.controlMenu{
+		display:none;
+	}
+	/*控制按钮*/
+	.phoneBtn{
+		display: block;
+		text-decoration: none;
+		width:100px;
+		height:100px;
+		border-radius: 50px;
+		opacity: 0.5;
+		background:black;
+		position: fixed;
+		font-family: Arial;
+		color:#FFF;
+		text-align: center;
+		font-size:20px;
+		line-height: 100px;
+	}
+	#phonePageU{
+		left:5%;
+		bottom:50%;
+		margin-bottom:-50px;
+	}
+	#phonePageD{
+		right:5%;
+		bottom:50%;
+		margin-bottom:-50px;
+	}
+	#phoneFullS{
+		display:none;
+	}
+	/*播放区域*/
+	#screenShow{
+		position:fixed;
+		-webkit-transform:scale(0.8,0.8);
+		-moz-transform:scale(0.8,0.8);
+	}
+} 

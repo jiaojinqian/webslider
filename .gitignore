@@ -1,0 +1,14 @@
+# Play framework
+tmp/
+
+# eclipse
+eclipse
+.classpath
+.settings
+.project
+
+# sql
+webslider.sql
+
+# Mac OS
+.DS_Store

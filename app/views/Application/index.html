@@ -1,0 +1,179 @@
+#{extends 'main.html' /}
+#{set title:'Web Slider | Home' /}
+<script type="text/javascript">
+	var current = 0;
+	var presId;
+	var scale = 1;
+</script>
+<!-- 菜单栏开始  -->
+<div id="menuBar">
+	<a href="#" class="logo menuBtn"></a>
+	<div class="fileMenu menuBtn">
+		<a href="#">文件</a>
+	</div>
+	<div class="fileMenuList">
+		<ul>
+			<li>
+				<a href="#"  id="foBtn">打开文件</a>
+			</li>
+			<li>
+				<a href="#" id="fdBtn">导出文件</a>
+			</li>
+			<li>
+				<a href="#" class="cancelBtn">取消选择</a>
+			</li>
+		</ul>
+	</div>
+	<div class="themeMenu menuBtn">
+		<a href="#">主题</a>
+	</div>
+	<div class="tranMenu menuBtn">
+		<a href="#">动画</a>
+	</div>
+	<div class="configMenu menuBtn">
+		<a href="#">设置</a>
+	</div>
+	<div class="helpMenu menuBtn">
+		<a href="#">帮助</a>
+	</div>
+	<div class="playMenu menuBtn">
+		<a href="#">
+			<img src="@{'/public/images/playBtn.png'}" alt="播放"/>
+		</a>
+	</div>
+	<div class="userMsg">
+		<a href="#" id="username">${user.nickname}</a>
+		<a href="@{Application.login()}">注销</a>
+		<input type="hidden" id="identity" value="${user.identity}"/>
+		<input type="hidden" id="slidePos" value=""/>
+	</div>
+</div>
+<!-- 菜单栏结束  -->
+
+<!-- 主题模态框开始   -->
+<div id="themeModal" class="modal">
+	<input type="hidden" id="crtTheme" value="0">
+	<div class="themeTop modalTop">
+		<span class="themeTitle modalTitle">选择主题背景</span>
+		<a class="themeCloseBtn modalCloseBtn" href="#"></a>
+	</div>
+	<div class="themeContent modalContent">
+		<a href="0" class="themeBox modalBox">纯浅色</a>
+		<a href="1" class="themeBox radiolBox modalBox">浅色渐变</a>
+		<a href="2" class="themeBox skullsBox modalBox">skulls</a>
+		<a href="3" class="themeBox lightGrayBox modalBox">light gray</a>
+		<a href="4" class="themeBox blueBox modalBox">深蓝海洋</a>
+		<a href="5" class="themeBox darkRadioBox modalBox">深色渐变</a>
+		<a href="6" class="themeBox rainboxBox modalBox">七色彩虹</a>
+		<a href="7" class="themeBox gplayBox modalBox">高大上</a>
+	</div>
+	<div class="themeBottom modalBottom">
+		<a class="themeConfirm modalConfirm" href="#">确定</a>
+		<a class="themeCancel themeCloseBtn modalCancel" href="#">取消</a>
+	</div>
+</div>
+<!-- 主题模态框结束  -->
+
+<!-- 动画模态框开始  -->
+<div id="transModal" class="modal">
+	<input type="hidden" id="transTheme" value="0">
+	<div class="transTop modalTop">
+		<span class="transTitle modalTitle">选择过渡动画</span>
+		<a class="transCloseBtn modalCloseBtn" href="#"></a>
+	</div>
+	<div class="transContent modalContent">
+		<a href="0" class="transBox modalBox">无</a>
+		<a href="1" class="transBox modalBox">渐变</a>
+		<a href="2" class="transBox modalBox">滑动</a>
+		<a href="3" class="transBox modalBox">折叠</a>
+		<a href="4" class="transBox modalBox">弹跳</a>
+		<a href="5" class="transBox modalBox">爆炸</a>
+		<a href="6" class="transBox modalBox">闪电</a>
+		<a href="7" class="transBox modalBox">impress.js</a>
+	</div>
+	<div class="transBottom modalBottom">
+		<a class="transConfirm modalConfirm" href="#">确定</a>
+		<a class="transCancel transCloseBtn modalCancel"  href="#">取消</a>
+	</div>
+</div>
+<!-- 动画模态框结束  -->
+
+<!-- 上传文件列表开始  -->
+<div class="slideList modal">
+	<div class="modalTop">
+		<span class="slideListTitle modalTitle">请选择要播放的幻灯片</span>
+		<a class="slideCloseBtn modalCloseBtn" href="#"></a>
+	</div>
+	<div class="slideListContent modalContent">
+		<table>
+			#{list slideList, as:'slide'}
+			<tr>
+				<td>
+					<a href="${slide.presPath}" class="slideHref">
+						${slide.presName}
+						<div class="editDate">${slide.uploadAt}</div>
+					</a>
+				</td>
+			</tr>
+			#{/list}
+		</table>
+	</div>
+	<div class="slideListBottom modalBottom">
+		<a class="modalConfirm" id="pptFile" name="pptFile" href="#">上传</a>
+		<a class="slideCloseBtn modalCancel"  href="#">取消</a>
+	</div>
+</div>
+<!-- 上传文件列表结束  -->
+
+<!--  播放区域开始  -->
+<div class="screenShow" id="screenShow">
+	<div class="welSite">
+		<div class="welContain">
+			<p class="welTitle">Web Slider</p>
+			<p class="welText">打造属于你的个性幻灯片</p>
+		</div>
+	</div>
+	<div id="pageNum">1</div>
+	<div id="tips"></div>
+	<div id="fullScreenMenu">
+		<a href="#" id="fprevBtn" class="prevBtn" title="上一页"></a>
+		<a href="#" id="fdrawBtn" class="drawBtn" title="铅笔"></a>
+		<a href="#" id="fnextBtn" class="nextBtn" title="下一页"></a>
+	</div>
+</div>
+<!-- 播放区域结束  -->
+
+<!-- 文件面板开始  -->
+<div id="fileMsg">
+	<div class="fileLogo">
+		<img src="@{'/public/images/ppt.png'}" alt="ppt" />
+	</div>
+	<div class="fileDetail left"></div>
+	<div class="fileDetail right"></div>
+</div>
+<!-- 文件面板结束  -->
+
+<!-- 播放信息开始   -->
+<div class="topSlideMsg">WEB SLIDER</div>
+<div class="bottomSlideMsg">
+	<span class="currentPage">1</span>
+	of
+	<span class="totalPage">1</span>
+</div>
+<div class="tooltips">
+	<p>使用方向键或者点击方向按钮控制幻灯片播放</p>
+</div>
+<a href="#" id="prevBtn" class="navBtn prevBtn"></a>
+<a href="#" id="nextBtn" class="navBtn nextBtn"></a>
+<!-- 播放信息结束  -->
+
+<!-- 遮罩层开始  -->
+<div id="shadow"></div>
+<!-- 遮罩层结束  -->
+
+<script src="@{'/public/javascripts/slideLoad.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/playControl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/fileUpload.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/jquery.upload.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/mouseMove.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/drawJS.js'}" type="text/javascript" charset="${_response_encoding}"></script>

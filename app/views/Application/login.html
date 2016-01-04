@@ -1,0 +1,42 @@
+#{extends 'loginTemplate.html' /}
+#{set title:'Web Slider | Login' /}
+<div id="loginFrame">
+    <form action="@{Application.index()}" method="POST">
+        <table id="loginTable">
+            <tr>
+                <td colspan="2" class="loginTile">Web Slider</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    用户名
+                    <br/>
+                    <input type="text" name="username" class="inputLine"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    密码
+                    <br/>
+                    <input type="password" name="password" class="inputLine"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- <a href="#" class="linkWord">忘记密码?</a>
+                    或
+                    <a href="#" class="linkWord">还没注册?</a> -->
+                    #{ifErrors username}
+                    	#{errors}
+                    	<span class="errMsg">&nbsp;&nbsp;&nbsp;${error}</span>
+                    	#{/errors}
+                    #{/ifErrors}
+                </td>
+                <td class="submitTd">
+                    <input type="submit" value="登录" />
+                    &nbsp;&nbsp;
+                    <a href="#" class="regBtn">游客</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

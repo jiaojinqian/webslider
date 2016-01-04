@@ -1,0 +1,42 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# impress page
+#GET    /home/impress/							Application.impress
+
+# Home page
+*    	/home/									Application.index
+
+# Login page
+GET     /                                       Application.login
+
+# Upload Action
+POST    /home/upload                            Application.uploadFile
+
+# Download Action
+GET     /home/download                          Application.downloadFile
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Map static resources from the /app/upload folder to the /upload path
+*       /upload/								staticDir:upload
+
+# Map static resources from the /app/assets folder to the /upload path
+*       /assets/								staticDir:assets
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+
+# Import Secure routes
+*       /                                       module:secure
+
+#WebSocket 
+WS 		/ws 									CommandSocket.interactive        	
+
+#test
+GET     /test								    staticFile:/upload/presentation.json

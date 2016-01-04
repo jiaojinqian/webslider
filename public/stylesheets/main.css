@@ -1,0 +1,717 @@
+/* ***************整体样式开始*****************  */
+@font-face
+{
+    font-family: NGARDEN TRIAL;
+    src: url('NGARDEN TRIAL___.ttf'),
+     url('NGARDEN TRIAL___.otf');
+    font-weight:bold;
+
+}
+html{
+    height:100%;
+}
+body{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    background:-webkit-radial-gradient(#FFFFFF 5%,#F1F1F1 25%,#D7D7D7 50%,#BDBDBD 100%);
+    background:-moz-radial-gradient(#FFFFFF 5%,#F1F1F1 25%,#D7D7D7 50%,#BDBDBD 100%);
+}
+/* ***************整体样式结束*****************  */
+
+/* ***************登录页面开始*****************  */
+#loginTable {
+    position:absolute;
+    width:550px;
+    height:350px;
+    background:#FFF;
+    left:50%;
+    top:50%;
+    padding:20px 40px 20px 40px;
+    margin-left:-275px;
+    margin-top:-175px;
+    border-radius:10px;
+    box-shadow:0px 2px 3px gray;
+    font-size:15px;
+    font-family:Microsoft Yahei;
+    color:#5B5B5B;
+}
+.loginTile {
+    font-size:30px;
+    font-family:Arial;
+    font-weight:bold;
+    color:gray;
+}
+.inputLine {
+    width:100%;
+    height:25px;
+    border:1px solid #D7D7D7;
+    background:#FAFAFA;
+}
+.inputLineName{
+    width:10%;
+    float:left;
+}
+.inputLine.reg{
+    width:85%;
+    float:right;
+}
+.submitTd {
+    text-align:right;
+}
+.submitTd input {
+    border:1px solid #D7D7D7;
+    border-radius:10px;
+    width:80px;
+    padding:3px 0px 3px 0px;
+    font-size:15px;
+    font-family:Arial;
+    color:#5B5B5B;
+    background:#F5F5F5;
+    cursor: pointer;
+}
+.submitTd input:hover {
+    background:#D7D7D7;
+    color:#FFF;
+}
+.regBtn{
+    display: inline-block;
+    border:1px solid #D7D7D7;
+    border-radius:10px;
+    width:80px;
+    padding:3px 0px 3px 0px;
+    font-size:15px;
+    font-family:Arial;
+    color:#5B5B5B;
+    text-align: center;
+    text-decoration: none; 
+    background:#F5F5F5; 
+}
+.regBtn:hover{
+    background:#D7D7D7;
+    color:#FFF;
+}
+.linkWord {
+    color:#008AE3;
+    text-decoration:none;
+}
+.linkWord:hover {
+    text-decoration:underline;
+}
+.errMsg{
+    color:red;
+}
+/* ***************登录页面结束*****************  */
+
+/* ***************首页页面开始*****************  */
+/* 菜单栏样式开始 */
+#menuBar{
+    position:fixed;
+    border-bottom:2px solid #DDDDDD;
+    top:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:60px;
+    background:#FFF;
+    z-index:102;
+}
+.logo{
+    padding:0px 3px 0px 3px;
+    width:60px;
+    height:40px;
+    float:left;
+    background:url(../images/logo.png) no-repeat center center; 
+    background-size:45px 45px;
+    background-color:gray;
+}
+.logo:hover{
+    background:url(../images/logo_h.png) no-repeat center center;
+    background-size:45px 45px;
+    background-color:gray;
+}
+.menuBtn{
+    float:left;
+    width:60px;
+    text-align: center;
+    padding:20px 0px 0px 7px;
+}
+.menuBtn a{
+    font-family:"verdana","ms song",Arial,"Helvetica","sans-serif",Microsoft Yahei;
+    color:#000;
+    text-decoration: none;
+    font-size: 15px;
+}
+.menuBtn a:hover{
+    font-weight: bold;
+}
+.playMenu{
+    padding-top:15px;
+}
+.playMenu a img{
+    width:28px;
+}
+.playMenu a{
+    opacity:0.6;
+}
+.playMenu a:hover{
+    opacity:1;
+}
+.fileMenuList{
+    display:none;
+    position:absolute;
+    top:60px;
+    left:53px;
+    border-radius: 5px;
+    background:#FFF;
+    font-size:12px;
+    font-family: Microsoft Yahei;
+    box-shadow: 0px 0px 5px #A1A1A1;
+    border:2px solid #A1A1A1;
+    background:#FDFDFD;
+}
+.fileMenuList ul{
+    list-style-type:none;
+    padding:0;
+}
+.fileMenuList ul li a{
+    padding:5px;
+    text-align: center;
+    display:block;
+    width:80px;
+    text-decoration: none;
+    color:black;
+}
+.fileMenuList ul li a:hover{
+    background:#A1A1A1;
+    color:#FFF;
+}
+.fileMenuList:before{
+    content:'';
+    position:absolute;
+    width:0;
+    height:0;
+    left:33px;
+    top:-30px;
+    border:15px solid;
+    border-color: transparent transparent #A1A1A1 transparent;
+}
+.fileMenuList:after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:0;
+    left:38px;
+    top:-20px;
+    border:10px solid;
+    border-color: transparent transparent #FDFDFD transparent;   
+} 
+.userMsg{
+    display: inline-block;
+    padding:25px 20px 0px 0px;
+    float:right;
+}
+.userMsg a{
+    padding-right:20px;
+    text-decoration: none;
+    font-family:Arial;
+    font-size:13px;
+    color:#000;
+}
+.userMsg a:hover{
+    text-decoration: underline;
+    color:gray;
+}
+/* 菜单栏样式结束  */
+
+/* 播放区域样式开始  */
+#screenWrap{
+    position:relative;
+    overflow: hidden;
+    padding-top: 120px;
+    width:100%;
+    height:100%;
+}
+.screenShow{
+    position:fixed;
+    overflow:hidden; 
+    margin:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    transition:all 2s;
+    -moz-transition:all 2s;
+    -webkit-transition:all 2s;
+}
+/* 播放区域样式结束  */
+
+/* 欢迎页面样式开始  */
+.welSite{
+    position:relative;
+    background:#FFF;
+    text-align: center;
+    width:70%;
+    height:100%;
+    margin:0 auto;
+    border-radius: 10px ;
+    border:1px solid rgba(0,0,0,.3);
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+.welContain{
+    width: 606px;
+    height: 170px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-left: -303px;
+    margin-top: -85px;
+}
+.welTitle{
+    margin:0;
+    color:#808080;
+    font-size:120px;
+    font-weight: bold; 
+    font-family: NGARDEN TRIAL;
+}
+.welText{
+    padding-top:15px;
+    margin:0;
+    font-size:26px;
+    color:#808080;
+}
+/* 欢迎页面样式结束 */
+
+/* 幻灯片样式开始  */
+.pptPage{
+    position:relative;
+    margin:0 auto;
+    background-color:#FFF;
+    border-radius: 10px ;
+    border:1px solid rgba(0,0,0,.3);
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    display: none;
+    z-index:1;
+}
+.pptPage.crtPage{
+    display: block;
+}
+.shape{
+    position:absolute;
+}
+#pageNum{
+    display: none;
+}
+#slideCanvas{
+    z-index:1;
+}
+/* 幻灯片样式结束  */   
+
+/* 模态对话框开始  */
+.modal{
+    position:fixed;
+    z-index:104;
+    margin:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    border:1px solid #A3A3A3;
+    padding:40px;
+    width:600px;
+    height:380px;
+    margin-left:auto;
+    margin-right:auto;
+    background:#FFF;
+    display:none;
+}
+.modalTop{
+    padding:10px 0px 20px 0px;
+}
+.modalTitle{
+    font-size:17px;
+}
+.modalTop a{
+    display:block;
+    width:11px;
+    height:11px;
+    float:right;
+    background:url(../images/close-x.png);
+    opacity:0.8;
+    transition:all 1s;
+    -moz-transition:all 1s;
+    -webkit-transition:all 1s;
+}
+.modalTop a:hover{
+    opacity:1;
+    transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+}
+.modalContent{
+    padding:30px 0px 10px 0px;
+    border:2px solid #F8F8F8;
+    padding:15px;
+    width:570px;
+    height:270px;
+}
+.themeBox.selected{
+    border: 2px solid #4A8BF5;
+    opacity: 1;
+}
+.transBox.selected{
+    border: 2px solid #4A8BF5;
+    opacity: 1;
+}
+.modalBox{
+    display:inline-block;
+    margin-bottom:20px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 100px;
+    font-size:14px;
+    border:2px solid #DDDDDD;
+    color:gray;
+    width:131px;
+    height:100px;
+    opacity:0.6;
+}
+.modalBox:hover{
+    opacity:1;
+}
+.radiolBox{
+    background:-moz-radial-gradient(#FFFFFF 0%,#F1F1F1 50%,#CCCCCC 100%);
+    background:-webkit-radial-gradient(#FFFFFF 5%,#F1F1F1 25%,#CCCCCC 50%);
+}
+.darkRadioBox{
+    background:-moz-radial-gradient(#8B8B8B 0%,#797979 50%,#444444 100%);
+    background:-webkit-radial-gradient(#8B8B8B 0%,#797979 50%,#444444 100%);    
+    color:#FFF;
+}
+.lightGrayBox{
+    background:url(../images/light_grey.png);
+}
+.skullsBox{
+    background:url(../images/skulls_thumb.jpg);
+}
+.blueBox{
+    background:blue;
+    color:#FFF;
+}
+.rainboxBox{
+    background:url(../images/rainbow_thumb.jpg);
+    color:#FFF;
+}
+.gplayBox{
+    background:url(../images/gplaypattern.png);
+    color:gray;
+}
+.banBox{
+    background:url(../images/ban.png) no-repeat center center;
+}
+.modalConfirm{
+    display: inline-block;
+    width:50px;
+    height:15px;
+    padding:10px;
+    line-height: 15px;
+    text-align: center;
+    border:1px solid #3079ED;
+    text-decoration: none;
+    color:#FFF;
+    font-size:16px;
+    background:#4A8BF5;
+}
+.modalConfirm:hover{
+    background:#4787ED;
+}
+.modalCancel{
+    display: inline-block;
+    width:50px;
+    height:15px;
+    padding:10px;
+    line-height: 15px;
+    text-align: center;
+    border:1px solid #D9D9D9;
+    text-decoration: none;
+    color:#333333;
+    font-size:16px;
+    background:#F3F3F3;
+}
+.modalCancel:hover{
+    background:#F8F8F8; 
+}
+.modalBottom{
+    padding:10px 0px 10px 0px;
+}
+/* 模态对话框开始  */
+
+#shadow{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.8;
+    display: none;
+    z-index:103;
+}
+#tips{
+    position:fixed;
+    border-radius: 5px;
+    left:0;
+    right:0;
+    bottom:5%;
+    margin-left:auto;
+    margin-right:auto;
+    width:130px;
+    height:30px;
+    padding:10px;
+    padding-left:15px;
+    background:black;
+    text-decoration: center;
+    font-size:16px;
+    font-family:Microsoft Yahei;
+    line-height: 30px;
+    color:#FFF;
+    opacity:0.8;
+    z-index:103;    
+    display: none;
+}
+.serialNum{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    font-size:18px;
+    font-family: Arial;
+    color:#FFF;
+    background-color:#000;
+    opacity: 0.8;
+    border-radius:25px;
+}
+
+/* 文件面板开始  */
+#fileMsg{
+    position:fixed;
+    padding:10px;
+    border-top:2px solid #DDDDDD;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:45px;
+    background:#FFF;
+    z-index:102;
+}
+.fileLogo{
+    float:left;
+    padding-left:20px;
+}
+.fileLogo img{
+    width:40px;
+}
+.fileDetail{
+    float:left;
+    padding-left:20px;
+    font-size:12px;
+    line-height: 20px;
+    color:#414141;
+}
+.fileName{
+    font-weight: bold;
+}
+/* 文件面板结束  */
+
+/* 导航按钮样式开始  */
+#prevBtn{
+    position:fixed;
+    top:50%;
+    left:10%;
+    display:block;
+    width:50px;
+    height:50px;
+    background:url(../images/prevBtn.png) no-repeat;
+}
+#prevBtn:hover{
+    opacity:1;
+}
+#nextBtn{
+    position:fixed;
+    top:50%;
+    right:10%;
+    display:block;
+    width:50px;
+    height:50px;
+    background:url(../images/nextBtn.png) no-repeat;
+}
+#nextBtn:hover{
+    opacity:1;
+}
+.navBtn{
+    opacity:0;
+    z-index:2;
+}
+.navBtn.show{
+    opacity:0.6;
+    transition:all 0.4s;
+    -moz-transition:all 0.4s;
+    -webkit-transition:all 0.4s;
+}
+.navBtn.show:hover{
+    transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+}
+/* 导航按钮样式结束  */
+
+/* 全屏菜单样式开始  */
+#fullScreenMenu{
+    position: fixed;
+    bottom:1%;
+    left:8%;
+    z-index:3;
+    padding:10px;
+    display:none;
+}
+#fullScreenMenu a{
+    display:inline-block;
+    opacity:0.7;
+    width:30px;
+    height:30px;
+}
+#fullScreenMenu a:hover{
+    opacity:1;
+}
+#fprevBtn{
+    background:url(../images/left_grey.png);
+    background-size:30px 30px;
+}
+#fnextBtn{
+    background:url(../images/right_grey.png);   
+    background-size:30px 30px;
+}
+#fdrawBtn{
+    background:url(../images/pencil.png);
+    background-size:30px 30px;
+}
+/* 全屏菜单样式结束  */
+
+/* 操作提示样式开始  */
+.tooltips{
+    opacity:0;
+    position:fixed;
+    background:#000;
+    height:100px;
+    width:100%;
+    top:50%;
+    z-index:1;
+    -webkit-transition:all 2s;
+    -moz-transition:all 2s;
+}
+.tooltips p{
+    text-align:center;
+    color:#FFF;
+    font-size:30px;
+}
+.tooltips.show{
+     opacity:0.7; 
+}
+.tooltips.hidden{
+    opacity: 0;
+    z-index:-1;
+}
+/* 操作提示样式结束  */
+
+/* 幻灯片列表模态开始  */
+.slideList{
+    border-radius: 10px;
+}
+.slideListTitle{
+    font-size:19px;
+    font-weight: bold;
+    color:gray;
+}
+.slideListContent{
+    background:#FFFFFF;
+    border:1px solid #DAC9C9;
+    padding:0;
+    width:100%;
+    height:280px;
+}
+.slideList table a{
+    display:block;
+    padding:5px;
+    font-size:14px;
+    text-decoration: none;
+    color:#858080;
+}
+.slideList table a:hover{
+    background:gray;
+    color:#FFF;
+}
+.editDate{
+    float:right;
+}
+.slideList table{
+    width:100%;
+}
+.slideList table td{
+    padding:0;
+}
+.slideListBottom .modalConfirm{
+    background:gray;
+    border:1px solid gray;
+}
+.slideListBottom .modalConfirm:hover{
+    background:#807676;
+    border:1px solid gray;
+}
+/* 幻灯片列表模态结束  */
+
+/* 标题面板样式开始   */
+.topSlideMsg{
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:40px;
+    background:#000;
+    color:#FFF;
+    z-index:101;
+    opacity:0.6;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size:18px;
+    font-family: Arial;
+    display: none;
+}
+/* 标题面板样式结束 */
+
+/* 页码面板样式开始 */
+.bottomSlideMsg{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:30px;
+    background:#000;
+    color:#FFF;
+    z-index:101;
+    opacity:0.6;
+    text-align: center;
+    font-size:16px;
+    line-height: 30px;
+    font-weight: bold;
+    font-family: Arial;
+    display: none;
+}
+/* 页码面板样式结束 */
+/* ***************首页页面结束*****************  */
